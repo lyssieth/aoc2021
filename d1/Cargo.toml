@@ -1,0 +1,12 @@
+[package]
+name = "d1"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "p1"
+path = "src/p1.rs"
+
+[[bin]]
+name = "p2"
+path = "src/p2.rs"
