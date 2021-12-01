@@ -1,33 +1,25 @@
-#![warn(clippy::pedantic)]
+#![warn(clippy::pedantic)] // because it is what it is
 
 const INPUT: &str = include_str!("input");
 
 fn main() {
     let digits = INPUT.split('\n');
 
-    // convert char to u32s
     let digits: Vec<u32> = digits
-        .filter(|x| !x.is_empty())
-        .map(|x| x.parse::<u32>().unwrap())
+        .filter(|x| !x.is_empty()) // gotta filter because it ends with a line break, plus safety
+        .map(|x| x.parse::<u32>().unwrap()) // make it all u32s
         .collect();
 
-    // count the number of times the previous number is smaller than the current number
     let mut counter = 0;
-    let mut previous = 0;
+    let mut previous = 99999; // 99999 because the first number doesn't matter
     for x in digits {
-        if previous == 0 {
-            previous = x;
-            continue;
-        }
         if x > previous {
-            println!("{} (increased)", x);
             counter += 1;
         } else {
-            println!("{} (decreased)", x);
         }
 
         previous = x;
     }
 
-    dbg!(counter);
+    dbg!(counter); // dbg because i'm lazy
 }
