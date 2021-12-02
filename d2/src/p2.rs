@@ -10,9 +10,9 @@ struct Position {
 }
 
 impl Position {
-    /// forward X increases distance by X
-    /// down X increases the depth by X
-    /// up X decreases the depth by X
+    /// forward X increases distance by X and depth by self.aim * X
+    /// down X increases the aim by X
+    /// up X decreases the aim by X
     pub fn apply(&mut self, action: &str) -> Option<()> {
         let (action, amount) = action.split_once(" ")?;
         let amount: i32 = amount.parse().unwrap();
