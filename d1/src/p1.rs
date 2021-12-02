@@ -7,19 +7,10 @@ fn main() {
 
     let digits: Vec<u32> = digits
         .filter(|x| !x.is_empty()) // gotta filter because it ends with a line break, plus safety
-        .map(|x| x.parse::<u32>().unwrap()) // make it all u32s
+        .flat_map(str::parse) // make it all u32s
         .collect();
 
-    let mut counter = 0;
-    let mut previous = 99999; // 99999 because the first number doesn't matter
-    for x in digits {
-        if x > previous {
-            counter += 1;
-        } else {
-        }
-
-        previous = x;
-    }
+    let counter = digits.windows(2).filter(|x| x[0] < x[1]).count();
 
     dbg!(counter); // dbg because i'm lazy
 }

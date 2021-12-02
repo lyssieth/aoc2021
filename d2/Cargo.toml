@@ -1,12 +1,12 @@
 [package]
-name = "d1"
+name = "d2"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name = "d1p1"
+name = "d2p1"
 path = "src/p1.rs"
 
 [[bin]]
-name = "d1p2"
+name = "d2p2"
 path = "src/p2.rs"
