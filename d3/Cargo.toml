@@ -1,0 +1,16 @@
+[package]
+name = "d3"
+version = "0.1.0"
+edition = "2021"
+
+
+[[bin]]
+name = "d3p1"
+path = "src/p1.rs"
+
+[[bin]]
+name = "d3p2"
+path = "src/p2.rs"
+
+[dependencies]
+bitvec = "1.0.0-rc1"
