@@ -1,0 +1,14 @@
+[package]
+name = "d4"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "d4p1"
+path = "src/p1.rs"
+
+[[bin]]
+name = "d4p2"
+path = "src/p2.rs"
+
+[dependencies]

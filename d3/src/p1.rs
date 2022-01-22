@@ -31,7 +31,7 @@ fn main() {
     }
 
     let gamma_rate = {
-        let mut build = 0usize;
+        let mut build = 0_usize;
         ones_in_pos
             .iter()
             .zip(zeros_in_pos.iter())
